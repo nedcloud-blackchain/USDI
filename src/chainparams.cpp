@@ -125,7 +125,7 @@ public:
         consensus.nCoinbaseMaturity = 240;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100001");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000768e0694cca667c");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -185,9 +185,10 @@ public:
 
         checkpointData = (CCheckpointData) {
                     boost::assign::map_list_of
-                    (0, uint256S("0x0000051481ec4795865418eb486c16507e8ceb7c6b8b396c28f6a2758ed53dc3")),
+                    (      0, uint256S("0x0000051481ec4795865418eb486c16507e8ceb7c6b8b396c28f6a2758ed53dc3"))
+                    (   1200, uint256S("0x00000002ae2910e2446f3c5d401c57a9a9675626de89605ff331d37272e586d1")),
                     1642622400, // * UNIX timestamp of last checkpoint block
-                    0,    // * total number of transactions between genesis and last checkpoint
+                    1580,    // * total number of transactions between genesis and last checkpoint
                                 //   (the tx=... number in the SetBestChain debug.log lines)
                     3500      // * estimated number of transactions per day after checkpoint
         };
@@ -232,7 +233,7 @@ public:
         nDefaultPort = 17333;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000000100001");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100001");
 
         /*
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
@@ -325,7 +326,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000000100001");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100001");
 
         /*
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
