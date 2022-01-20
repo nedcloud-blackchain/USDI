@@ -489,7 +489,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/USDIAltcoinReserve/USDI>";
     const std::string URL_WEBSITE = "<https://usdicoin.com/>";
     // todo: remove urls from translations on next change
 
