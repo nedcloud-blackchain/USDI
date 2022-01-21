@@ -125,7 +125,7 @@ public:
         consensus.nCoinbaseMaturity = 240;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000768e0694cca667c");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000010b66d1f9c7dd8d7");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
