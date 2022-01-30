@@ -1,5 +1,5 @@
 ---
-name: "usdi-win-signer"
+name: "bitcoin-win-signer"
 distro: "ubuntu"
 suites:
 - "focal"
