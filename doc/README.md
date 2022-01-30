@@ -15,12 +15,12 @@ The following are some helpful notes on how to run Blackcoin on your native plat
 
 Unpack the files into a directory and run:
 
-- `bin/blackmore-qt` (GUI) or
+- `bin/usdi-qt` (GUI) or
 - `bin/blackmored` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run blackmore-qt.exe.
+Unpack the files into a directory, and then run usdi-qt.exe.
 
 ### OS X
 
