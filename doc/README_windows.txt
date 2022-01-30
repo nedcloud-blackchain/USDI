@@ -1,9 +1,9 @@
-USDI
+Blackcoin More
 =============
 
 Intro
 -----
-USDI is a free open source peer-to-peer electronic cash system that is
+Blackcoin is a free open source peer-to-peer electronic cash system that is
 completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
@@ -11,11 +11,11 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 -----
-Unpack the files into a directory and run usdi-qt.exe.
+Unpack the files into a directory and run blackmore-qt.exe.
 
-USDI is the original USDI client and it builds the backbone of the network.
-However, it downloads and stores the entire history of USDI transactions;
+Blackcoin More is the original Blackcoin client and it builds the backbone of the network.
+However, it downloads and stores the entire history of Blackcoin transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
 
-See the USDI website at https://usdicoin.com for more help and information.
+See the Blackcoin More website at https://blackcoinmore.org for more help and information.
