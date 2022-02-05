@@ -24,17 +24,17 @@ In case you want to build the disk image with `make deploy` (.dmg / optional), y
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build USDI
+Build Blackcoin More
 ------------------------
 
-1. Clone the usdi source code and cd into `usdi`
+1. Clone the blackcoin source code and cd into `blackcoin-more`
 
-        git clone https://gitlab.com/usdi/usdi/
-        cd usdi
+        git clone https://gitlab.com/blackcoin/blackcoin-more/
+        cd blackcoin-more
 
-2.  Build usdi:
+2.  Build blackcoin-more:
 
-    Configure and build the headless usdi binaries as well as the GUI (if Qt is found).
+    Configure and build the headless blackcoin binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -53,30 +53,30 @@ Build USDI
 Running
 -------
 
-USDI is now available at `./src/usdid`
+Blackcoin More is now available at `./src/blackmored`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=usdirpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/USDI/usdi.conf"
+    echo -e "rpcuser=blackcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Blackmore/blackmore.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/USDI/usdi.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Blackmore/blackmore.conf"
 
-The first time you run usdid, it will start downloading the blockchain. This process could take several hours.
+The first time you run blackmored, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/USDI/debug.log
+    tail -f $HOME/Library/Application\ Support/Blackmore/debug.log
 
 Other commands:
 -------
 
-    ./src/usdid -daemon # Starts the usdi daemon.
-    ./src/usdi-cli --help # Outputs a list of command-line options.
-    ./src/usdi-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/blackmored -daemon # Starts the blackcoin daemon.
+    ./src/blackmore-cli --help # Outputs a list of command-line options.
+    ./src/blackmore-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for usdi development.
+You can use Qt Creator as an IDE, for blackcoin development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
