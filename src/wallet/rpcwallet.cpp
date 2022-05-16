@@ -3,6 +3,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+// getstakereport RPC by Navcoin
+// Copyright (c) 2017-2019 The Navcoin developers
+
 #include "amount.h"
 #include "chain.h"
 #include "core_io.h"

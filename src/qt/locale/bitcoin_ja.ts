@@ -415,7 +415,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>支払いを要求する (QRコードとgranadeiro:ではじまるURIを生成する)</translation>
+        <translation>支払いを要求する (QRコードとusdi:ではじまるURIを生成する)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -1057,7 +1057,7 @@
     </message>
     <message>
         <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 プロキシ経由でGranadeiroネットワークに接続する</translation>
+        <translation>SOCKS5 プロキシ経由でUSDIネットワークに接続する</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1097,7 +1097,7 @@
     </message>
     <message>
         <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でGranadeiroネットワークに接続する</translation>
+        <translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でUSDIネットワークに接続する</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1381,7 +1381,7 @@
     </message>
     <message>
         <source>Enter a Bitcoin address (e.g. %1)</source>
-        <translation>Granadeiroアドレスを入力してください (例 %1)</translation>
+        <translation>USDIアドレスを入力してください (例 %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1805,7 +1805,7 @@
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです。注意：メッセージはGranadeiroネットワークを通じて、支払と共に送られるわけではありません。</translation>
+        <translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです。注意：メッセージはUSDIネットワークを通じて、支払と共に送られるわけではありません。</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2038,7 +2038,7 @@
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
-        <translation>ブロックの容量に比べてトランザクション流量が少ないうちは最小手数料のみの支払で十分です。しかしながらネットワークが処理しきれないほどgranadeiroトランザクションの需要がひとたび生まれてしまった場合には、永遠に検証がされないトランザクションになってしまう可能性があることに注意してください。</translation>
+        <translation>ブロックの容量に比べてトランザクション流量が少ないうちは最小手数料のみの支払で十分です。しかしながらネットワークが処理しきれないほどusdiトランザクションの需要がひとたび生まれてしまった場合には、永遠に検証がされないトランザクションになってしまう可能性があることに注意してください。</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -2202,7 +2202,7 @@
     </message>
     <message>
         <source>Warning: Invalid Bitcoin address</source>
-        <translation>警告：無効なGranadeiroアドレスです</translation>
+        <translation>警告：無効なUSDIアドレスです</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2245,7 +2245,7 @@
     </message>
     <message>
         <source>The Bitcoin address to send the payment to</source>
-        <translation>支払の送金先Granadeiroアドレス</translation>
+        <translation>支払の送金先USDIアドレス</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2289,7 +2289,7 @@
     </message>
     <message>
         <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>usdi: URIに添付されていたメッセージです。これは参照用としてトランザクションとともに保存されます。注意：このメッセージはGranadeiroネットワークを通して送信されるわけではありません。</translation>
+        <translation>usdi: URIに添付されていたメッセージです。これは参照用としてトランザクションとともに保存されます。注意：このメッセージはUSDIネットワークを通して送信されるわけではありません。</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2338,7 +2338,7 @@
     </message>
     <message>
         <source>The Bitcoin address to sign the message with</source>
-        <translation>メッセージを署名するGranadeiroアドレス</translation>
+        <translation>メッセージを署名するUSDIアドレス</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2394,7 +2394,7 @@
     </message>
     <message>
         <source>The Bitcoin address the message was signed with</source>
-        <translation>メッセージの署名に使われたGranadeiroアドレス</translation>
+        <translation>メッセージの署名に使われたUSDIアドレス</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>

@@ -7,12 +7,10 @@ Release Process
 
 * Update translations see [translation_process.md](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md#synchronising-translations).
 * Update manpages, see [gen-manpages.sh](https://github.com/bitcoin/bitcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
-* Update release candidate version in `configure.ac` (`CLIENT_VERSION_RC`).
 
 ### Before every major and minor release
 
 * Update [bips.md](bips.md) to account for changes since the last release (don't forget to bump the version number on the first line).
-* Update version in `configure.ac` (don't forget to set `CLIENT_VERSION_RC` to `0`).
 * Write release notes (see "Write the release notes" below).
 
 ### Before every major release
@@ -22,6 +20,7 @@ Release Process
   - update `CLIENT_VERSION_MAJOR`, `PACKAGE_VERSION`, and `PACKAGE_STRING` in [`build_msvc/bitcoin_config.h`](/build_msvc/bitcoin_config.h)
 * On the new release branch in [`configure.ac`](../configure.ac) and [`build_msvc/bitcoin_config.h`](/build_msvc/bitcoin_config.h) (see [this commit](https://github.com/bitcoin/bitcoin/commit/742f7dd)):
   - set `CLIENT_VERSION_MINOR` to `0`
+  - set `CLIENT_VERSION_REVISION` to `0`
   - set `CLIENT_VERSION_BUILD` to `0`
   - set `CLIENT_VERSION_IS_RELEASE` to `true`
 

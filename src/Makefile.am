@@ -401,7 +401,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 usdid_SOURCES = bitcoind.cpp
 usdid_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 usdid_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-usdid_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+usdid_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
 usdid_SOURCES += bitcoind-res.rc
