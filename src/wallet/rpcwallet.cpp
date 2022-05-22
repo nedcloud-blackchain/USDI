@@ -386,7 +386,7 @@ static void SendMoneyToScript(const CScript scriptPubKey, CAmount nValue, bool f
 
 static void SendMoney(const CTxDestination &address, CAmount nValue, bool fSubtractFeeFromAmount, CWalletTx& wtxNew)
 {
-    // Parse Bitcoin address
+    // Parse USDI address
     CScript scriptPubKey = GetScriptForDestination(address);
 
     SendMoneyToScript(scriptPubKey, nValue, fSubtractFeeFromAmount, wtxNew);
@@ -587,7 +587,7 @@ UniValue getreceivedbyaddress(const UniValue& params, bool fHelp)
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    // Bitcoin address
+    // USDI address
     CTxDestination dest = DecodeDestination(params[0].get_str());
     if (!IsValidDestination(dest)) {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid USDI address");

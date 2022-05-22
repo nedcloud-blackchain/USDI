@@ -18,6 +18,10 @@
 #include <QPoint>
 #include <QSystemTrayIcon>
 
+#ifdef Q_OS_MAC
+#include <qt/macos_appnap.h>
+#endif
+
 #include <memory>
 
 class ClientModel;

@@ -52,7 +52,7 @@
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/split.hpp>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/function.hpp>
 #include <boost/interprocess/sync/file_lock.hpp>
@@ -63,6 +63,7 @@
 #include "zmq/zmqnotificationinterface.h"
 #endif
 
+using namespace boost::placeholders;
 using namespace std;
 
 bool fFeeEstimatesInitialized = false;
@@ -138,7 +139,7 @@ bool ShutdownRequested()
 /**
  * This is a minimally invasive approach to shutdown on LevelDB read errors from the
  * chainstate, while keeping user interface out of the common library, which is shared
- * between bitcoind, and bitcoin-qt and non-server tools.
+ * between usdid, and usdi-qt and non-server tools.
 */
 class CCoinsViewErrorCatcher : public CCoinsViewBacked
 {
@@ -186,7 +187,7 @@ void Shutdown()
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    RenameThread("bitcoin-shutoff");
+    RenameThread("usdi-shutoff");
     mempool.AddTransactionsUpdated(1);
 
     StopHTTPRPC();
@@ -488,7 +489,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/USDIAltcoinReserve/USDI>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/USDI-AmericanFederalTrust>";
     const std::string URL_WEBSITE = "<https://usdicoin.com/>";
     // todo: remove urls from translations on next change
 

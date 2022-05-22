@@ -23,14 +23,12 @@
 #include "consensus/validation.h"
 #include "hash.h"
 #include "init.h"
-#include "key.h"
 #include "merkleblock.h"
 #include "net.h"
 #include "policy/fees.h"
 #include "policy/policy.h"
 #include "pos.h"
 #include "pow.h"
-#include "pubkey.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
 #include "random.h"
@@ -47,7 +45,6 @@
 #include "utilstrencodings.h"
 #include "validationinterface.h"
 #include "versionbits.h"
-#include "key.h"
 #include "wallet/wallet.h"
 
 #include <atomic>
@@ -1240,16 +1237,16 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
     AssertLockHeld(cs_main);
     if (pfMissingInputs)
         *pfMissingInputs = false;
+
+    // Blackcoin: Limit dust
     int dust_tx_count = 0;
     CAmount min_dust = 100000;
-
-    BOOST_FOREACH (const CTxOut& txout, tx.vout) {
-        // LogPrintf("tx_out value %d, minimum value %d dust count %d", txout.nValue, min_dust, dust_tx_count);
+    BOOST_FOREACH(const CTxOut& txout, tx.vout) {
+        // LogPrintf("tx_out value: %d, minimum value: %d, dust count: %d", txout.nValue, min_dust, dust_tx_count);
         if (txout.nValue < min_dust)
-            dust_tx_count = dust_tx_count + 1;
-        if (dust_tx_count > 2)
-            return state.DoS(0, false, REJECT_DUST, "too many dust vouts");
-
+            dust_tx_count++;
+        if (dust_tx_count > 10)
+            return state.DoS(0, false, REJECT_INVALID, "too many dust vouts");
     }
 
     if (!CheckTransaction(tx, state))
@@ -2045,7 +2042,6 @@ bool CheckTxInputs(const CTransaction& tx, CValidationState& state, const CCoins
                                     REJECT_INVALID, "bad-txns-premature-spend-of-coinbase");
             }
 
-
             // Check transaction timestamp
             if (coins->nTime > tx.nTime)
                     return state.DoS(100, error("CheckInputs() : transaction timestamp earlier than input transaction"),
@@ -2348,7 +2344,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("bitcoin-scriptch");
+    RenameThread("usdi-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2427,9 +2423,6 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             view.SetBestBlock(pindex->GetBlockHash());
         return true;
     }
-
-    // Set proof-of-stake hash modifier
-    pindex->nStakeModifier = ComputeStakeModifier(pindex->pprev, block.IsProofOfStake() ? block.vtx[1].vin[0].prevout.hash : block.GetHash());
 
     // Check difficulty
     if (block.nBits != GetNextTargetRequired(pindex->pprev, &block, chainparams.GetConsensus(), block.IsProofOfStake()))
@@ -2569,10 +2562,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             }
         }
 
-        // GetTransactionSigOpCount counts 3 types of sigops:
+        // GetTransactionSigOpCount counts 2 types of sigops:
         // * legacy (always)
         // * p2sh (when P2SH enabled in flags and excludes coinbase)
-        // * witness (when witness enabled in flags and excludes coinbase)
         nSigOpsCount += GetTransactionSigOpCount(tx, view, flags);
         if (nSigOpsCount > MAX_BLOCK_SIGOPS)
             return state.DoS(100, error("ConnectBlock(): too many sigops"),
@@ -2623,6 +2615,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                                        nActualStakeReward, blockReward),
                                        REJECT_INVALID, "bad-cs-amount");
     }
+
+    // Set proof-of-stake hash modifier
+    pindex->nStakeModifier = ComputeStakeModifier(pindex->pprev, block.IsProofOfStake() ? block.vtx[1].vin[0].prevout.hash : block.GetHash());
 
     if (!control.Wait())
         return state.DoS(100, false);
@@ -5030,7 +5025,7 @@ void static ProcessGetData(CNode* pfrom, const Consensus::Params& consensusParam
                         // they wont have a useful mempool to match against a compact block,
                         // and we don't feel like constructing the object for them, so
                         // instead we respond with the full, non-compact block.
-                        if (CanDirectFetch(consensusParams) && mi->second->nHeight >= chainActive.Height() - MAX_BLOCKTXN_DEPTH) {
+                        if (CanDirectFetch(consensusParams) && mi->second->nHeight >= chainActive.Height() - MAX_CMPCTBLOCK_DEPTH) {
                             CBlockHeaderAndShortTxIDs cmpctblock(block);
                             pfrom->PushMessage(NetMsgType::CMPCTBLOCK, cmpctblock);
                         } else

@@ -6,7 +6,7 @@ The `macdeployqtplus` script should not be run manually. Instead, after building
 make deploy
 ```
 
-When complete, it will have produced `Blackcoin-More.dmg`.
+When complete, it will have produced `USDI.dmg`.
 
 ## SDK Extraction
 

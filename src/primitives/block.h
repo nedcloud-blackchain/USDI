@@ -134,8 +134,6 @@ public:
         return block;
     }
 
-
-
     std::string ToString() const;
 };
 

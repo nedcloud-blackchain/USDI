@@ -1,9 +1,9 @@
-Blackcoin More
+USDI
 =============
 
 Setup
 ---------------------
-USDI is an Blackcoin More fork and it builds the backbone of the USDI network. However, it downloads and stores the entire history of Blackcoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+USDI is an Blackcoin More fork and it builds the backbone of the USDI network. However, it downloads and stores the entire history of USDI transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
 To read about Blackcoin More, visit [blackcoinmore.org](https://blackcoinmore.org).
 To read about USDI, visit [buyusdi.com](https://buyusdi.com).
