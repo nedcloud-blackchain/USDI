@@ -1,23 +1,21 @@
 Calculating main genesis block...
 Genesis block found!
-nonce: 659356
-time: 1647444600
-blockhash: 000003fc616d45fe7cc75fb5c0bd0c67f88bdd12c7903e24821280fb53e5b36c
-merklehash: 1d66701ab873d10f679daa90846e3fe1b2926fca03810a1472d2eb20e5b27bb3
-
+nonce: 419733890
+time: 1652716800
+blockhash: 000000003c008e29ee1fb22fc83668cec0ffbe99e67c97c3f4963b117e0922a5
+merklehash: 10b0dac5b1a8dbc005a38e91d7712592e84f2662332306d6f54b3cbdf9294601
 
 Calculating testnet genesis block...
 Genesis block found!
-nonce: 47633
-time: 1647444600
-blockhash: 0000a740f3f54677ef7af918025cc44f38b79714079cb853dfa39d469bdaa207
-merklehash: 1d66701ab873d10f679daa90846e3fe1b2926fca03810a1472d2eb20e5b27bb3
-
+nonce: 254931
+time: 1652716800
+blockhash: 0000ab49a2600e19a2f42dd0cdff32350d8b919bf4ff65bc2e33db2b2c0aa22f
+merklehash: 10b0dac5b1a8dbc005a38e91d7712592e84f2662332306d6f54b3cbdf9294601
 
 Calculating regtest genesis block...
 Genesis block found!
-nonce: 132781
-time: 1647421200
-blockhash: 00004beb7dc2b27e027858a1af9d9d5a80131a5f736633d1d0e9b6439c1dd3f3
-merklehash: ff6d1cf5b6eb1555427893de3f0a558247bd44530888afcb06699bd5f99b9231
+nonce: 209997
+time: 1652717000
+blockhash: 0000b54acc562d6df2698002da32fd6f5ae14fe89851ec172a03ce5db63c889e
+merklehash: 14cb84f0b2d8bbf39caaa987c29788f3330bdb4ad615f18fd4c648b270f13f95
 
