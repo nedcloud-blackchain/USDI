@@ -95,9 +95,9 @@ static const unsigned int BLOCK_STALLING_TIMEOUT = 2;
 static const unsigned int MAX_HEADERS_RESULTS = 2000;
 /** Maximum depth of blocks we're willing to serve as compact blocks to peers
  *  when requested. For older blocks, a regular BLOCK response will be sent. */
-// static const int MAX_CMPCTBLOCK_DEPTH = 5; - BIP152 is disabled
+static const int MAX_CMPCTBLOCK_DEPTH = 5;
 /** Maximum depth of blocks we're willing to respond to GETBLOCKTXN requests for. */
-// static const int MAX_BLOCKTXN_DEPTH = 10; - BIP152 is disabled
+static const int MAX_BLOCKTXN_DEPTH = 10;
 /** Size of the "block download window": how far ahead of our current height do we fetch?
  *  Larger windows tolerate larger download speed differences between peer, but increase the potential
  *  degree of disordering of blocks on disk (which make reindexing and in the future perhaps pruning
@@ -278,7 +278,7 @@ std::string GetWarnings(const std::string& strFor);
 bool GetTransaction(const uint256 &hash, CTransaction &tx, const Consensus::Params& params, uint256 &hashBlock, bool fAllowSlow = false);
 /** Find the best known block, and make it the tip of the block chain */
 bool ActivateBestChain(CValidationState& state, const CChainParams& chainparams, const CBlock* pblock = NULL);
-CAmount GetProofOfWorkSubsidy();
+CAmount GetProofOfWorkSubsidy(int nHeight);
 CAmount GetProofOfStakeSubsidy();
 
 /**
