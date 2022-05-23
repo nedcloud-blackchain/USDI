@@ -2471,11 +2471,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     // USDI also requires low S in sigs
     flags |= SCRIPT_VERIFY_LOW_S;
 
-    // Start enforcing CHECKLOCKTIMEVERIFY, (BIP65) since since POS
-    if (block.IsProofOfStake()) {
-        flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
-        flags |= SCRIPT_VERIFY_NULLDUMMY;
-    }
+    // Start enforcing CHECKLOCKTIMEVERIFY, (BIP65)
+    flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
+    flags |= SCRIPT_VERIFY_NULLDUMMY;
 
     /*
     Start enforcing BIP68 (sequence locks) and BIP112 (CHECKSEQUENCEVERIFY) using versionbits logic.
