@@ -310,6 +310,7 @@ libbitcoin_consensus_a_SOURCES = \
   script/script_error.cpp \
   script/script_error.h \
   serialize.h \
+  timedatadummy.cpp \
   tinyformat.h \
   uint256.cpp \
   uint256.h \
@@ -435,7 +436,9 @@ usdi_cli_LDADD = \
 usdi_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 
 # usdi-tx binary #
-usdi_tx_SOURCES = bitcoin-tx.cpp
+usdi_tx_SOURCES = \
+  bitcoin-tx.cpp \
+  timedatadummy.cpp
 usdi_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 usdi_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 usdi_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
