@@ -118,7 +118,7 @@ public:
         consensus.nCoinbaseMaturity = 240;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000073a8f02a8a3a5304");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000098c252d42de4f55c");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -158,8 +158,8 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x0000000042b9aed1976bfddc24a145852325d9f453f0a52d40154de11eac7bd9"));
         assert(genesis.hashMerkleRoot == uint256S("0xdb48e2b1ba07270d105ae4a71c05eaf7054957057ac10c32ba38c3d02dec9ef2"));
 
-        vSeeds.push_back(CDNSSeedData("seed1.usdicoin.com", "seed1.usdicoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed2.usdicoin.com", "seed2.usdicoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed1.usdigold.com", "seed1.usdigold.com"));
+        vSeeds.push_back(CDNSSeedData("seed2.usdigold.com", "seed2.usdigold.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,130);

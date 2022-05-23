@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"com.usdicoin.USDI-Qt";
+        return @"com.usdigold.USDI-Qt";
     } else {
         return [self __bundleIdentifier];
     }
